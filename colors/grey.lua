@@ -84,7 +84,7 @@ local highlights = {
   EndOfBuffer = { fg = background, bg = background },
   Error = { link = 'ErrorMsg' },
   ErrorMsg = { fg = red, bold = true },
-  FoldColumn = { fg = light_grey, bg = background },
+  FoldColumn = { link = 'Comment' },
   Folded = { link = 'Comment' },
   Identifier = { fg = black },
   Function = { fg = black },
