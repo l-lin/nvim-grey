@@ -471,6 +471,8 @@ local highlights = {
   ['@text.uri'] = { fg = blue },
   ['@variable.builtin'] = { bold = true },
   ['@string.regexp'] = { link = 'Regexp' },
+  TreesitterContext = { bg = light_grey },
+  TreesitterContextLineNumber = { bg = light_grey },
   -- Custom Tree-sitter captures added by this theme.
   ['@variable.parameter.reference'] = { fg = orange },
   -- Vimscript
