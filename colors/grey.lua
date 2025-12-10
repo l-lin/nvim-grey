@@ -290,6 +290,12 @@ local highlights = {
   markdownListMarker = { link = 'Keyword' },
   markdownOrderedListMarker = { link = 'Keyword' },
   markdownUrl = { fg = blue },
+  RenderMarkdownH1Bg = { link = 'DiffAdd' },
+  RenderMarkdownH2Bg = { link = 'DiffText' },
+  RenderMarkdownH3Bg = { bg = light_grey },
+  RenderMarkdownH4Bg = { bg = light_grey },
+  RenderMarkdownH5Bg = { bg = light_grey },
+  RenderMarkdownH6Bg = { bg = light_grey },
   -- mini.diff
   MiniDiffSignAdd = { fg = border },
   MiniDiffSignDelete = { fg = border },
