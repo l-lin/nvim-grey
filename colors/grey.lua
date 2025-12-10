@@ -268,8 +268,8 @@ local highlights = {
   -- Lua
   luaFunction = { link = 'Keyword' },
   -- LSP
-  DiagnosticUnderlineError = { underline = true, sp = red },
-  DiagnosticUnderlineWarn = { underline = true, sp = dark_yellow },
+  DiagnosticUnderlineError = { underline = true, fg = red, sp = red },
+  DiagnosticUnderlineWarn = { underline = true, fg = dark_yellow, sp = dark_yellow },
   LspDiagnosticsUnderlineError = { link = 'DiagnosticUnderlineError' },
   LspDiagnosticsUnderlineWarning = { link = 'DiagnosticUnderlineWarn' },
   LspReferenceTarget = {},
