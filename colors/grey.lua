@@ -174,7 +174,7 @@ local highlights = {
   -- Diffs
   DiffAdd = { bg = light_green },
   DiffChange = { bg = highlight },
-  DiffDelete = { fg = red },
+  DiffDelete = { bg = light_red },
   DiffText = { bg = light_yellow },
   diffAdded = { link = 'DiffAdd' },
   diffChanged = { link = 'DiffChange' },
