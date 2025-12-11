@@ -216,12 +216,12 @@ local highlights = {
   ['@markup.link.gitcommit'] = { fg = green, bold = true },
   ['@comment.warning.gitcommit'] = { fg = red, bold = true },
   -- Gitsigns
-  GitSignsAdd = { fg = border },
-  GitSignsDelete = { fg = border },
-  GitSignsChange = { fg = border },
-  GitSignsStagedAdd = { fg = grey },
-  GitSignsStagedDelete = { fg = grey },
-  GitSignsStagedChange = { fg = grey },
+  GitSignsAdd = { fg = green },
+  GitSignsDelete = { fg = red },
+  GitSignsChange = { fg = dark_yellow },
+  GitSignsStagedAdd = { link = 'GitSignsAdd' },
+  GitSignsStagedDelete = { link = 'GitSignsDelete' },
+  GitSignsStagedChange = { link = 'GitSignsChange' },
   -- HAML
   hamlClass = { fg = black },
   hamlDocType = { link = 'Comment' },
