@@ -296,6 +296,7 @@ local highlights = {
   RenderMarkdownH4Bg = { bg = light_grey },
   RenderMarkdownH5Bg = { bg = light_grey },
   RenderMarkdownH6Bg = { bg = light_grey },
+  RenderMarkdownCodeInline = { bg = light_grey },
   -- mini.diff
   MiniDiffSignAdd = { fg = border },
   MiniDiffSignDelete = { fg = border },
