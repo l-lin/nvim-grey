@@ -217,8 +217,11 @@ local highlights = {
   ['@comment.warning.gitcommit'] = { fg = red, bold = true },
   -- Gitsigns
   GitSignsAdd = { fg = green },
+  GitSignsAddInline = { bg = green, fg = white },
   GitSignsDelete = { fg = red },
+  GitSignsDeleteInline = { bg = red, fg = white },
   GitSignsChange = { fg = dark_yellow },
+  GitSignsChangeInline = { bg = green, fg = white },
   GitSignsStagedAdd = { link = 'GitSignsAdd' },
   GitSignsStagedDelete = { link = 'GitSignsDelete' },
   GitSignsStagedChange = { link = 'GitSignsChange' },
