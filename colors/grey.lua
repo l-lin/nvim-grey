@@ -445,6 +445,13 @@ local highlights = {
   SnacksPickerCol = { link = 'Number' },
   SnacksPickerListCursorLine = { bg = light_grey, bold = true },
   SnacksIndent = { fg = light_grey },
+  SnacksGhUserBadge = { fg = blue, bg = light_grey },
+  SnacksGhAuthorBadge = { fg = dark_yellow, bg = light_yellow },
+  SnacksGhOwnerBadge = { fg = red, bg = light_red },
+  SnacksGhAssocBadge = { fg = grey, bg = light_grey },
+  SnacksGhBotBadge = { fg = grey, bg = light_grey },
+  SnacksGhReactionBadge = { fg = purple, bg = light_grey },
+  SnacksGhStatBadge = { fg = black, bg = light_grey },
   -- Snippy
   SnippyPlaceholder = { link = 'SnippetTabstop' },
   -- SQL
