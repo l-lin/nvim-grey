@@ -24,6 +24,8 @@ local black = '#000000'
 local blue = '#1561b8'
 local green = '#1C5708'
 local light_green = '#dfeacc'
+local light_blue = '#dce8f7'
+local light_purple = '#eadff3'
 local light_red = '#f2d3cd'
 local red = '#c4331d'
 local grey = '#5e5e5e'
@@ -73,7 +75,7 @@ local highlights = {
   Boolean = { link = 'Keyword' },
   Character = { link = 'String' },
   ColorColumn = { bg = highlight },
-  Comment = { fg = grey },
+  Comment = { fg = grey, bg = light_grey },
   Conceal = {},
   Constant = { fg = black },
   Cursor = { bg = black },
@@ -88,6 +90,7 @@ local highlights = {
   Folded = { link = 'Comment' },
   Identifier = { fg = black },
   Function = { fg = black },
+  FunctionDefinition = { fg = black, bg = light_purple },
   IncSearch = { link = 'Search' },
   CurSearch = { link = 'Search' },
   Include = { fg = black, bold = true },
@@ -105,7 +108,7 @@ local highlights = {
   NormalFloat = { fg = black },
   FloatTitle = { fg = black, bold = true },
   FloatBorder = { fg = border },
-  Number = { fg = blue },
+  Number = { fg = blue, bg = light_blue },
   Operator = { fg = black },
   Pmenu = { fg = black, bg = grey_bg_light },
   PmenuSbar = { bg = grey_bg_light },
@@ -120,7 +123,7 @@ local highlights = {
   Search = { bg = light_yellow },
   SignColumn = { link = 'FoldColumn' },
   Special = { fg = black },
-  SpecialKey = { link = 'Number' },
+  SpecialKey = { fg = blue },
   SpellBad = { sp = red, underline = true },
   SpellCap = { sp = dark_yellow, underline = true },
   SpellLocal = { sp = blue, underline = true },
@@ -133,7 +136,7 @@ local highlights = {
   WinBarNc = { fg = black, bold = true },
   WinBarFill = { fg = border },
   StorageClass = { link = 'Keyword' },
-  String = { fg = green },
+  String = { fg = green, bg = light_green },
   SnippetTabstop = {},
   Symbol = { fg = orange },
   TabLine = { fg = black, bg = light_grey },
@@ -159,7 +162,7 @@ local highlights = {
   CccFloatBorder = { link = 'FloatBorder' },
   -- CSS
   cssClassName = { link = 'Keyword' },
-  cssColor = { link = 'Number' },
+  cssColor = { fg = blue },
   cssIdentifier = { link = 'Keyword' },
   cssImportant = { link = 'Keyword' },
   cssProp = { link = 'Identifier' },
@@ -230,11 +233,6 @@ local highlights = {
   hamlDocType = { link = 'Comment' },
   hamlId = { fg = black },
   hamlTag = { fg = black, bold = true },
-  -- hop.nvim
-  HopNextKey = { fg = black, bold = true, bg = yellow },
-  HopNextKey1 = { bg = light_yellow },
-  HopNextKey2 = { bg = light_yellow },
-  HopUnmatched = {},
   -- HTML
   htmlArg = { link = 'Identifier' },
   htmlLink = { link = 'Directory' },
@@ -244,15 +242,6 @@ local highlights = {
   htmlTagName = { link = 'htmlTag' },
   htmlItalic = { italic = true },
   htmlBold = { bold = true },
-  -- Inko
-  inkoCommentBold = { fg = grey, bold = true },
-  inkoCommentInlineUrl = { link = 'Number' },
-  inkoCommentItalic = { fg = grey, italic = true },
-  inkoCommentTitle = { fg = grey, bold = true },
-  inkoInstanceVariable = { link = 'InstanceVariable' },
-  inkoKeywordArgument = { link = 'Regexp' },
-  ['@variable.member.inko'] = { link = 'InstanceVariable' },
-  ['@constant.builtin.inko'] = { link = 'Keyword' },
   -- Java
   javaAnnotation = { link = 'Directory' },
   javaCommentTitle = { link = 'javaComment' },
@@ -260,6 +249,7 @@ local highlights = {
   javaDocTags = { link = 'Todo' },
   javaExternal = { link = 'Keyword' },
   javaStorageClass = { link = 'Keyword' },
+  ['@function.method.java'] = { link = 'FunctionDefinition' },
   -- Javascript
   JavaScriptNumber = { link = 'Number' },
   javaScriptBraces = { link = 'Operator' },
@@ -268,6 +258,8 @@ local highlights = {
   javaScriptMember = { link = 'Identifier' },
   -- JSON
   jsonKeyword = { link = 'String' },
+  -- Kotlin
+  ['@function.method.kotlin'] = { link = 'FunctionDefinition' },
   -- Lua
   luaFunction = { link = 'Keyword' },
   -- LSP
@@ -275,7 +267,24 @@ local highlights = {
   DiagnosticUnderlineWarn = { underline = true, fg = dark_yellow, sp = dark_yellow },
   LspDiagnosticsUnderlineError = { link = 'DiagnosticUnderlineError' },
   LspDiagnosticsUnderlineWarning = { link = 'DiagnosticUnderlineWarn' },
-  LspReferenceTarget = {},
+  LspReferenceTarget = { underline = true, sp = grey },
+  LspReferenceWrite = { link = 'LspReferenceTarget' },
+  LspReferenceRead = { link = 'LspReferenceTarget' },
+  LspReferenceText = { link = 'LspReferenceTarget' },
+  ['@lsp.typemod.class.declaration'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.class.definition'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.enum.declaration'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.enum.definition'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.function.declaration'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.function.definition'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.interface.declaration'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.interface.definition'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.method.declaration'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.method.definition'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.record.declaration'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.record.definition'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.struct.declaration'] = { link = 'FunctionDefinition' },
+  ['@lsp.typemod.struct.definition'] = { link = 'FunctionDefinition' },
   DiagnosticFloatingError = { fg = red, bold = true },
   DiagnosticFloatingHint = { fg = black, bold = true },
   DiagnosticFloatingInfo = { fg = blue, bold = true },
@@ -286,7 +295,7 @@ local highlights = {
   DiagnosticWarn = { fg = dark_yellow, bold = true },
   DiagnosticDeprecated = {},
   -- Make
-  makeTarget = { link = 'Function' },
+  makeTarget = { link = 'FunctionDefinition' },
   -- Markdown
   markdownCode = { link = 'markdownCodeBlock' },
   markdownCodeBlock = { link = 'Comment' },
@@ -402,7 +411,7 @@ local highlights = {
   rubyClassVariable = { link = 'rubyInstancevariable' },
   rubyConstant = { link = 'Constant' },
   rubyDefine = { link = 'Keyword' },
-  rubyFunction = { link = 'Function' },
+  rubyFunction = { link = 'FunctionDefinition' },
   rubyInstanceVariable = { link = 'InstanceVariable' },
   rubyMacro = { link = 'Identifier' },
   rubyModule = { link = 'rubyClass' },
@@ -438,11 +447,12 @@ local highlights = {
   -- Snacks
   SnacksPickerMatch = { fg = dark_yellow, bold = true },
   SnacksPickerDir = { fg = black },
+  SnacksPickerIdx = { fg = blue },
   SnacksPickerPrompt = { fg = black, bold = true },
   SnacksInputBorder = { link = 'FloatBorder' },
   SnacksInputTitle = { link = 'Title' },
-  SnacksPickerRow = { link = 'Number' },
-  SnacksPickerCol = { link = 'Number' },
+  SnacksPickerRow = { fg = blue },
+  SnacksPickerCol = { fg = blue },
   SnacksPickerListCursorLine = { bg = light_grey, bold = true },
   SnacksIndent = { fg = light_grey },
   SnacksGhUserBadge = { fg = blue, bg = light_grey },
@@ -474,6 +484,13 @@ local highlights = {
   TelescopeTitle = { fg = black, bold = true },
   TelescopeNormal = { fg = black },
   -- Treesitter
+  ['@function'] = { link = 'Function' },
+  ['@function.method'] = { link = 'Function' },
+  ['@function.call'] = { link = 'Function' },
+  ['@function.method.call'] = { link = 'Function' },
+  ['@function.builtin'] = { link = 'Function' },
+  ['@function.method.builtin'] = { link = 'Function' },
+  ['@function.macro'] = { link = 'Macro' },
   ['@markup.link'] = { underline = true },
   ['@property.json'] = { bold = true },
   ['@text.emphasis'] = { italic = true },
@@ -497,6 +514,7 @@ local highlights = {
   xmlTagName = { link = 'Identifier' },
   -- YAML
   yamlPlainScalar = { link = 'String' },
+  ['@string.yaml'] = { fg = green },
   -- YARD
   yardComment = { link = 'Comment' },
   yardType = { link = 'Todo' },
